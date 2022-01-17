@@ -1,0 +1,30 @@
+/*-----------------------------------------HTML-TYPE-SELECTORSS-------------------------------------------*/
+/*VISIBLE LINES (BUTTON SEGRAGATION*/
+hr {
+  display: table;
+}
+/*MAIN-HEADING*/
+h2 {
+  text-align: center;
+}
+/*--------------------------------------------TABLE_DESIGN-----------------------------------------------------*/
+/*
+                                                   NOTE
+- <table>...</table> defines table
+- <th>...</th> defines a header cell in table
+- <td>...</td> defines cell in table
+*/
+table,
+td,
+th {
+  position: static;
+  border: 1.5px solid #dddddd;
+  text-align: center;
+  background-color: rgb(166, 173, 158);
+  padding: 10px;
+}
+
+/*------------------------------------DECLARED-CLASSES-FOR-MANIPULATION----------------------------------------*/
+.HIDDEN-TESTING {
+  display: block;
+}
