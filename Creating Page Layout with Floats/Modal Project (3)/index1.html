@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python Machine Learning Components & Algorithms</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+      <div class="Container-Contents">
+        <h3>PYTHON MACHINE LEARNING DISTANCE METRICS & ALGORITHMS CODED</h3>
+        <div class="SIDE-BAR">
+          <button class="SHOW-MODAL-1">User-Interface Manhattan Distance Metric</button>
+          <button class="SHOW-MODAL-2">User-Interface Euclidean Distance Metric</button>
+          <button class="SHOW-MODAL-3">Bubble Sort Algorithm</button>
+          <button class="SHOW-MODAL-4">Linear Regression Algorithm</button>
+          <button class="SHOW-MODAL-5">Logisitc Regression Algorithm</button>
+          <button class="SHOW-MODAL-6">K Means Clustering Algorithm</button>
+          <button class="SHOW-MODAL-7">Conventional Neural Network Algorithm</button>
+        </div>
+        <img id = "IMAGE-1-TRIAL-ERROR" src = "https://tse2.mm.bing.net/th?id=OIP.go0GK1Z8dSK7fXucyrLl3AHaET&pid=Api&P=0&w=275&h=159"/>
+        <div class="MODAL HIDDEN">
+          <button class="CLOSE-MODAL">&times;</button>
+          <p class="text-1"><pre>
+            print('Please Read & Follow Instructions')
+            print('Please input the number of elements that you wish to calculate the manhattan distance from the two centoids:')
+            n1 = input()
+            #convert string to integer rationale range function & randinint requires interger value
+            n1 = int(n1)
+            print('Please input the max range :')
+            n2 = input()
+            n2 = int(n2)
+            
+            #create two random lists to hold X & Y co - ordinates of elements
+            #X co-ordinates
+            X = []
+            #Y co - ordinates
+            Y = []
+            
+            #intialize for loop with the range function (start/end)
+            for i in range(0,n1):
+                #Generates a random number between a given positive range
+                x = random.randint(1,n2)
+                #appends to empty list(adds)
+                X.append(x)
+            for i in range(0,n1):
+                y = random.randint(1,n2)
+                Y.append(y)
+                
+            print('x co - ordinates',X)
+            print('y co - ordinates',Y)
+            
+            print('Please enter centroid 1 co - ordinates')
+            print('Enter x co - ordinate')
+            cx1 = input()
+            cx1 = int(cx1)
+            print('Enter y co - ordinate')
+            cy1 = input()
+            cy1 = int(cy1)
+            print('Centroid 1 x co - ordinates:',cx1)
+            print('Centroid 1 y co - ordinates:',cy1)
+            
+            print('Please enter centroid 2 co - ordinates')
+            print('Enter x co - ordinate')
+            cx2 = input()
+            cx2 = int(cx2)
+            print('Enter y co - ordinate')
+            cy2 = input()
+            cy2 = int(cy2)
+            print('Centroid 2 x co - ordinates:',cx2)
+            print('Centroid 2 y co - ordinates:',cy2)
+            
+            #Initiate empty list
+            list1 = []
+            list2 = []
+            
+            #initiate for loop looping through both lists . zipped .. together in the sequence desired for specific cacluations
+            for x,y in zip(X,Y):
+                #while loop : iterations continues until list length exceeds the other list length
+                while len(X) <= len(Y):
+                    #append(add) calculations to empty list
+                    list1.append((cx1 - x) + (cy1 - y))
+                    #break essential for termination of the iteration process when conditions are met.
+                    #If not while looped would continue..... its iteration process
+                    break
+            for i,f in zip(X,Y):
+                while len(X) <= len(Y):
+                    list2.append((cx2 - i) + (cy2 - f))
+                    break
+            
+            print('Manhattan Distance | Centroid 1 :', list1)
+            print('Manhattan Distance | Centroid 2 :', list2)
+          </pre>
+          </p>
+        </div>
+        <div class = "MODAL2 HIDDEN2">
+          <button class="CLOSE-MODAL2">&times;</button>
+          <p class="text-2"><pre>
+            print('Please input number of elements :')
+            n1 = input()
+            #convert string to integer rationale range function & randinint requires interger value
+            n1 = int(n1)
+            print('Please input the max range :')
+            n2 = input()
+            n2 = int(n2)
+            
+            #create two random lists to hold X & Y co - ordinates of elements
+            #X co-ordinates
+            X = []
+            #Y co - ordinates
+            Y = []
+            
+            #intialize for loop with the range function (start/end)
+            for i in range(0,n1):
+                #Generates a random number between a given positive range
+                x = random.randint(1,n2)
+                #appends to empty list(adds)
+                X.append(x)
+            for i in range(0,n1):
+                y = random.randint(1,n2)
+                Y.append(y)
+            
+            
+            print('Please enter centroid 1 co - ordinates')
+            print('Enter x co - ordinate')
+            cx1 = input()
+            cx1 = int(cx1)
+            print('Enter y co - ordinate')
+            cy1 = input()
+            cy1 = int(cy1)
+            print('Centroid 1 x co - ordinates:',cx1)
+            print('Centroid 1 y co - ordinates:',cy1)
+            
+            print('Please enter centroid 2 co - ordinates')
+            print('Enter x co - ordinate')
+            cx2 = input()
+            cx2 = int(cx2)
+            print('Enter y co - ordinate')
+            cy2 = input()
+            cy2 = int(cy2)
+            print('Centroid 2 x co - ordinates:',cx2)
+            print('Centroid 2 y co - ordinates:',cy2)
+            
+            #SCATTERPLOT 
+            #x & y co-ordniates
+            plt.style.use('ggplot')
+            fig, ax = plt.subplots()
+            ax.scatter(X, Y)
+            # add centroid 1 & centroid 2
+            plt.scatter(x=[cx1], y=[cy1], color='b')
+            plt.scatter(x=[cx2], y=[cy2], color='g')
+            plt.title("X & Y Co-Ordinates | Centroid 1 & 2")
+            plt.xlabel("X")
+            plt.ylabel("Y")
+            plt.show()
+            
+            
+            #initiliaze empty lists
+            list1 = []
+            list2 = []
+            list3 = []
+            list4 = []
+            list5 = []
+            list6 = []
+            
+            #eulcidean distance calculations
+            for xi in X:
+                #while loop : terminate the for loop when length of list1 exceeds the length of the list2
+                while len(X) <= len(X):
+                    #appending(adding calculations to list)
+                    list1.append((cx1 - xi) ** 2)
+                    #appending(adding calculations to list)
+                    break
+            for yi in Y:
+                while len(Y) <= len(Y):
+                    list2.append((cy1 - yi) ** 2)
+                    break
+            
+            #for loop to loop over list
+            for xii in X:
+                while len(X) <= len(X):
+                    list3.append((cx2 - xii) ** 2)
+                    break
+            for yii in Y:
+                while len(Y) <= len(Y):
+                    list4.append((cy2 - yii) ** 2)
+                    break
+                    
+            #for loop zipping together two lists   
+            for x,y in zip (list1,list2):
+                while len(list1) <= len(list2):
+                    #square root calculations
+                    phase1 = sqrt(x + y)
+                    list5.append(phase1)
+                    break
+                    
+            for a,b in zip (list3,list4):
+                while len(list3) <= len(list4):
+                    phase2 = sqrt(a + b)
+                    list6.append(phase2)
+                    break
+                
+            print('Euclidean Distance Calculations:',list5)
+            #print(type(list5))
+            print('Eulclidean Distance Calculations:',list6)
+            #print(type(list6))
+          </pre>
+          </p>
+        </div>
+        <div class="MODAL3 HIDDEN3">
+          <button class="CLOSE-MODAL3">&times</button>
+          <p class="text-3"><pre>
+            #Bubble-Sort-Algorithm
+            while cx < 35: # execute while loop if condition is true ie. c less than 25
+                cx += 1
+                print("--------------------------------------------------------------------")
+                print("Original Postion Indexer",p1a)
+                print("Original Postion Indexer",p2a)
+                print("--------------------------------------------------------------------")
+                print("")
+                #for loop program !
+                for i in List_E:
+                    print("AlGORITHM - ITERATION - ", cx)
+                    p1a += 1 # addition assignment operator
+                    p2a +=1 # addition assignment operator
+                    print("Updated Postion Index 1:",p1a)
+                    print("Updated Position Index 2:",p2a)
+                    for z in range(p1a,p2a,1): # range(start,stop,step)
+                        if p2a <= len(List_E):
+                            try: # try block lets you test a block of code for errors.
+                                print("Loop-Range-Experimentation")
+                                print("Updated Index 1", List_E[p1a])
+                                print("Updated Index 2", List_E[p2a])
+                                print("")
+                                if List_E[p1a] > List_E[p2a]:
+                                    List_E[p1a],List_E[p2a] = List_E[p2a],List_E[p1a]
+                                    print(List_E)
+                                    print("Condition Passed: Element Swapped")
+                                    print("")
+                                    print("--------------------------------------------------------------------")
+                                else:
+                                    print("Condition Not Passed: Element Not Swapped")
+                                    print("")
+                                    print("--------------------------------------------------------------------")
+                            except: # except block enable error handling 
+                                #This code (try/except) will enable us to reset the index and loop back to start of the list for this alogorithm
+                                print("--Index-Out-Of-Range--")
+                                print("--Error Handling Required--")
+                                print("--------------------------------------------------------------------")
+                                p1a = -1 # reseting the index
+                                p2a = 0 # reseting the index
+                if cx == 35: # of statement for output analysis
+                    print("--------------------------------------------------------------------")
+                    print("--------------------------------------------------------------------")
+                    print("Bubble-Sort-Algorithm-Status: COMPLETE")
+                    print("Please see the sorted list:")
+                    print(List_E)
+                    print("Please see Orginal List for compairsion analysis:")
+                    print(Original_List_E)
+                    print("--------------------------------------------------------------------")
+                    print("--------------------------------------------------------------------")
+          </pre></p>
+        </div>
+      </div>
+      <div class="OVERLAY HIDDEN"></div>
+      <div class="OVERLAY2 HIDDEN2"></div>
+      <div class="OVERLAY3 HIDDEN3"></div>
+    </div>  
+    <script src="mechanics1.js"></script>
+  </body>
+</html>
